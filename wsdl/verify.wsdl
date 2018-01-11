@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://WebXml.com.cn/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://WebXml.com.cn/">
+	<wsdl:types>
+		<s:schema elementFormDefault="qualified" targetNamespace="http://WebXml.com.cn/">
+			<s:element name="smallValidateImage">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="byString"
+							type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="smallValidateImageResponse">
+				<s:complexType />
+			</s:element>
+			<s:element name="smallValidateByte">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="byString"
+							type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="smallValidateByteResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="smallValidateByteResult" type="s:base64Binary" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="enValidateImage">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="byString"
+							type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="enValidateImageResponse">
+				<s:complexType />
+			</s:element>
+			<s:element name="enValidateByte">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="byString"
+							type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="enValidateByteResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="enValidateByteResult" type="s:base64Binary" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="cnValidateImage">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="byString"
+							type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="cnValidateImageResponse">
+				<s:complexType />
+			</s:element>
+			<s:element name="cnValidateByte">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="byString"
+							type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="cnValidateByteResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="cnValidateByteResult" type="s:base64Binary" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="base64Binary" nillable="true" type="s:base64Binary" />
+		</s:schema>
+	</wsdl:types>
+	<wsdl:message name="smallValidateImageSoapIn">
+		<wsdl:part name="parameters" element="tns:smallValidateImage" />
+	</wsdl:message>
+	<wsdl:message name="smallValidateImageSoapOut">
+		<wsdl:part name="parameters" element="tns:smallValidateImageResponse" />
+	</wsdl:message>
+	<wsdl:message name="smallValidateByteSoapIn">
+		<wsdl:part name="parameters" element="tns:smallValidateByte" />
+	</wsdl:message>
+	<wsdl:message name="smallValidateByteSoapOut">
+		<wsdl:part name="parameters" element="tns:smallValidateByteResponse" />
+	</wsdl:message>
+	<wsdl:message name="enValidateImageSoapIn">
+		<wsdl:part name="parameters" element="tns:enValidateImage" />
+	</wsdl:message>
+	<wsdl:message name="enValidateImageSoapOut">
+		<wsdl:part name="parameters" element="tns:enValidateImageResponse" />
+	</wsdl:message>
+	<wsdl:message name="enValidateByteSoapIn">
+		<wsdl:part name="parameters" element="tns:enValidateByte" />
+	</wsdl:message>
+	<wsdl:message name="enValidateByteSoapOut">
+		<wsdl:part name="parameters" element="tns:enValidateByteResponse" />
+	</wsdl:message>
+	<wsdl:message name="cnValidateImageSoapIn">
+		<wsdl:part name="parameters" element="tns:cnValidateImage" />
+	</wsdl:message>
+	<wsdl:message name="cnValidateImageSoapOut">
+		<wsdl:part name="parameters" element="tns:cnValidateImageResponse" />
+	</wsdl:message>
+	<wsdl:message name="cnValidateByteSoapIn">
+		<wsdl:part name="parameters" element="tns:cnValidateByte" />
+	</wsdl:message>
+	<wsdl:message name="cnValidateByteSoapOut">
+		<wsdl:part name="parameters" element="tns:cnValidateByteResponse" />
+	</wsdl:message>
+	<wsdl:message name="smallValidateImageHttpGetIn">
+		<wsdl:part name="byString" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="smallValidateImageHttpGetOut" />
+	<wsdl:message name="smallValidateByteHttpGetIn">
+		<wsdl:part name="byString" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="smallValidateByteHttpGetOut">
+		<wsdl:part name="Body" element="tns:base64Binary" />
+	</wsdl:message>
+	<wsdl:message name="enValidateImageHttpGetIn">
+		<wsdl:part name="byString" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="enValidateImageHttpGetOut" />
+	<wsdl:message name="enValidateByteHttpGetIn">
+		<wsdl:part name="byString" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="enValidateByteHttpGetOut">
+		<wsdl:part name="Body" element="tns:base64Binary" />
+	</wsdl:message>
+	<wsdl:message name="cnValidateImageHttpGetIn">
+		<wsdl:part name="byString" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="cnValidateImageHttpGetOut" />
+	<wsdl:message name="cnValidateByteHttpGetIn">
+		<wsdl:part name="byString" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="cnValidateByteHttpGetOut">
+		<wsdl:part name="Body" element="tns:base64Binary" />
+	</wsdl:message>
+	<wsdl:message name="smallValidateImageHttpPostIn">
+		<wsdl:part name="byString" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="smallValidateImageHttpPostOut" />
+	<wsdl:message name="smallValidateByteHttpPostIn">
+		<wsdl:part name="byString" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="smallValidateByteHttpPostOut">
+		<wsdl:part name="Body" element="tns:base64Binary" />
+	</wsdl:message>
+	<wsdl:message name="enValidateImageHttpPostIn">
+		<wsdl:part name="byString" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="enValidateImageHttpPostOut" />
+	<wsdl:message name="enValidateByteHttpPostIn">
+		<wsdl:part name="byString" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="enValidateByteHttpPostOut">
+		<wsdl:part name="Body" element="tns:base64Binary" />
+	</wsdl:message>
+	<wsdl:message name="cnValidateImageHttpPostIn">
+		<wsdl:part name="byString" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="cnValidateImageHttpPostOut" />
+	<wsdl:message name="cnValidateByteHttpPostIn">
+		<wsdl:part name="byString" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="cnValidateByteHttpPostOut">
+		<wsdl:part name="Body" element="tns:base64Binary" />
+	</wsdl:message>
+	<wsdl:portType name="ValidateCodeWebServiceSoap">
+		<wsdl:operation name="smallValidateImage">
+			<wsdl:input message="tns:smallValidateImageSoapIn" />
+			<wsdl:output message="tns:smallValidateImageSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="smallValidateByte">
+			<wsdl:input message="tns:smallValidateByteSoapIn" />
+			<wsdl:output message="tns:smallValidateByteSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="enValidateImage">
+			<wsdl:input message="tns:enValidateImageSoapIn" />
+			<wsdl:output message="tns:enValidateImageSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="enValidateByte">
+			<wsdl:input message="tns:enValidateByteSoapIn" />
+			<wsdl:output message="tns:enValidateByteSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="cnValidateImage">
+			<wsdl:input message="tns:cnValidateImageSoapIn" />
+			<wsdl:output message="tns:cnValidateImageSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="cnValidateByte">
+			<wsdl:input message="tns:cnValidateByteSoapIn" />
+			<wsdl:output message="tns:cnValidateByteSoapOut" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="ValidateCodeWebServiceHttpGet">
+		<wsdl:operation name="smallValidateImage">
+			<wsdl:input message="tns:smallValidateImageHttpGetIn" />
+			<wsdl:output message="tns:smallValidateImageHttpGetOut" />
+		</wsdl:operation>
+		<wsdl:operation name="smallValidateByte">
+			<wsdl:input message="tns:smallValidateByteHttpGetIn" />
+			<wsdl:output message="tns:smallValidateByteHttpGetOut" />
+		</wsdl:operation>
+		<wsdl:operation name="enValidateImage">
+			<wsdl:input message="tns:enValidateImageHttpGetIn" />
+			<wsdl:output message="tns:enValidateImageHttpGetOut" />
+		</wsdl:operation>
+		<wsdl:operation name="enValidateByte">
+			<wsdl:input message="tns:enValidateByteHttpGetIn" />
+			<wsdl:output message="tns:enValidateByteHttpGetOut" />
+		</wsdl:operation>
+		<wsdl:operation name="cnValidateImage">
+			<wsdl:input message="tns:cnValidateImageHttpGetIn" />
+			<wsdl:output message="tns:cnValidateImageHttpGetOut" />
+		</wsdl:operation>
+		<wsdl:operation name="cnValidateByte">
+			<wsdl:input message="tns:cnValidateByteHttpGetIn" />
+			<wsdl:output message="tns:cnValidateByteHttpGetOut" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="ValidateCodeWebServiceHttpPost">
+		<wsdl:operation name="smallValidateImage">
+			<wsdl:input message="tns:smallValidateImageHttpPostIn" />
+			<wsdl:output message="tns:smallValidateImageHttpPostOut" />
+		</wsdl:operation>
+		<wsdl:operation name="smallValidateByte">
+			<wsdl:input message="tns:smallValidateByteHttpPostIn" />
+			<wsdl:output message="tns:smallValidateByteHttpPostOut" />
+		</wsdl:operation>
+		<wsdl:operation name="enValidateImage">
+			<wsdl:input message="tns:enValidateImageHttpPostIn" />
+			<wsdl:output message="tns:enValidateImageHttpPostOut" />
+		</wsdl:operation>
+		<wsdl:operation name="enValidateByte">
+			<wsdl:input message="tns:enValidateByteHttpPostIn" />
+			<wsdl:output message="tns:enValidateByteHttpPostOut" />
+		</wsdl:operation>
+		<wsdl:operation name="cnValidateImage">
+			<wsdl:input message="tns:cnValidateImageHttpPostIn" />
+			<wsdl:output message="tns:cnValidateImageHttpPostOut" />
+		</wsdl:operation>
+		<wsdl:operation name="cnValidateByte">
+			<wsdl:input message="tns:cnValidateByteHttpPostIn" />
+			<wsdl:output message="tns:cnValidateByteHttpPostOut" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ValidateCodeWebServiceSoap" type="tns:ValidateCodeWebServiceSoap">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="smallValidateImage">
+			<soap:operation soapAction="http://WebXml.com.cn/smallValidateImage"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="smallValidateByte">
+			<soap:operation soapAction="http://WebXml.com.cn/smallValidateByte"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="enValidateImage">
+			<soap:operation soapAction="http://WebXml.com.cn/enValidateImage"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="enValidateByte">
+			<soap:operation soapAction="http://WebXml.com.cn/enValidateByte"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="cnValidateImage">
+			<soap:operation soapAction="http://WebXml.com.cn/cnValidateImage"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="cnValidateByte">
+			<soap:operation soapAction="http://WebXml.com.cn/cnValidateByte"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="ValidateCodeWebServiceSoap12" type="tns:ValidateCodeWebServiceSoap">
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="smallValidateImage">
+			<soap12:operation soapAction="http://WebXml.com.cn/smallValidateImage"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="smallValidateByte">
+			<soap12:operation soapAction="http://WebXml.com.cn/smallValidateByte"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="enValidateImage">
+			<soap12:operation soapAction="http://WebXml.com.cn/enValidateImage"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="enValidateByte">
+			<soap12:operation soapAction="http://WebXml.com.cn/enValidateByte"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="cnValidateImage">
+			<soap12:operation soapAction="http://WebXml.com.cn/cnValidateImage"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="cnValidateByte">
+			<soap12:operation soapAction="http://WebXml.com.cn/cnValidateByte"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="ValidateCodeWebServiceHttpGet" type="tns:ValidateCodeWebServiceHttpGet">
+		<http:binding verb="GET" />
+		<wsdl:operation name="smallValidateImage">
+			<http:operation location="/smallValidateImage" />
+			<wsdl:input>
+				<http:urlEncoded />
+			</wsdl:input>
+			<wsdl:output />
+		</wsdl:operation>
+		<wsdl:operation name="smallValidateByte">
+			<http:operation location="/smallValidateByte" />
+			<wsdl:input>
+				<http:urlEncoded />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="enValidateImage">
+			<http:operation location="/enValidateImage" />
+			<wsdl:input>
+				<http:urlEncoded />
+			</wsdl:input>
+			<wsdl:output />
+		</wsdl:operation>
+		<wsdl:operation name="enValidateByte">
+			<http:operation location="/enValidateByte" />
+			<wsdl:input>
+				<http:urlEncoded />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="cnValidateImage">
+			<http:operation location="/cnValidateImage" />
+			<wsdl:input>
+				<http:urlEncoded />
+			</wsdl:input>
+			<wsdl:output />
+		</wsdl:operation>
+		<wsdl:operation name="cnValidateByte">
+			<http:operation location="/cnValidateByte" />
+			<wsdl:input>
+				<http:urlEncoded />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="ValidateCodeWebServiceHttpPost" type="tns:ValidateCodeWebServiceHttpPost">
+		<http:binding verb="POST" />
+		<wsdl:operation name="smallValidateImage">
+			<http:operation location="/smallValidateImage" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output />
+		</wsdl:operation>
+		<wsdl:operation name="smallValidateByte">
+			<http:operation location="/smallValidateByte" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="enValidateImage">
+			<http:operation location="/enValidateImage" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output />
+		</wsdl:operation>
+		<wsdl:operation name="enValidateByte">
+			<http:operation location="/enValidateByte" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="cnValidateImage">
+			<http:operation location="/cnValidateImage" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output />
+		</wsdl:operation>
+		<wsdl:operation name="cnValidateByte">
+			<http:operation location="/cnValidateByte" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ValidateCodeWebService">
+		<wsdl:port name="ValidateCodeWebServiceSoap" binding="tns:ValidateCodeWebServiceSoap">
+			<soap:address
+				location="http://www.webxml.com.cn/WebServices/ValidateCodeWebService.asmx" />
+		</wsdl:port>
+		<wsdl:port name="ValidateCodeWebServiceSoap12" binding="tns:ValidateCodeWebServiceSoap12">
+			<soap12:address
+				location="http://www.webxml.com.cn/WebServices/ValidateCodeWebService.asmx" />
+		</wsdl:port>
+		<wsdl:port name="ValidateCodeWebServiceHttpGet" binding="tns:ValidateCodeWebServiceHttpGet">
+			<http:address
+				location="http://www.webxml.com.cn/WebServices/ValidateCodeWebService.asmx" />
+		</wsdl:port>
+		<wsdl:port name="ValidateCodeWebServiceHttpPost" binding="tns:ValidateCodeWebServiceHttpPost">
+			<http:address
+				location="http://www.webxml.com.cn/WebServices/ValidateCodeWebService.asmx" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

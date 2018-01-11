@@ -2,6 +2,8 @@
 package helloworld;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Action;
@@ -24,11 +26,44 @@ public interface WStest {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns java.lang.String
      */
     @WebMethod
-    @RequestWrapper(localName = "hello", targetNamespace = "http://publishServlet/", className = "publishservlet.Hello")
-    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://publishServlet/", className = "publishservlet.HelloResponse")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "str", targetNamespace = "http://publishServlet/", className = "helloworld.Str")
+    @ResponseWrapper(localName = "strResponse", targetNamespace = "http://publishServlet/", className = "helloworld.StrResponse")
+    @Action(input = "http://publishServlet/WStest/strRequest", output = "http://publishServlet/WStest/strResponse")
+    public String str(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     */
+    @WebMethod
+    @RequestWrapper(localName = "hello", targetNamespace = "http://publishServlet/", className = "helloworld.Hello")
+    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://publishServlet/", className = "helloworld.HelloResponse")
     @Action(input = "http://publishServlet/WStest/helloRequest", output = "http://publishServlet/WStest/helloResponse")
     public void hello();
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns helloworld.Box
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getBean", targetNamespace = "http://publishServlet/", className = "helloworld.GetBean")
+    @ResponseWrapper(localName = "getBeanResponse", targetNamespace = "http://publishServlet/", className = "helloworld.GetBeanResponse")
+    @Action(input = "http://publishServlet/WStest/getBeanRequest", output = "http://publishServlet/WStest/getBeanResponse")
+    public Box getBean(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
 }
